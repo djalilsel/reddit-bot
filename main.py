@@ -8,11 +8,11 @@ import os
 
 print("start")
 
-#arr = np.array(["1c0s4ub", "1c0s7xg"])
+arr = np.array(["1c0s4ub", "1c0s7xg"])
 driver = webdriver.Chrome()
 driver.maximize_window()
 
-arr = np.load('id.npy')
+#arr = np.load('id.npy')
 
 posts = getPosts()
 
@@ -45,7 +45,7 @@ for post in posts:
         if titleAndComments.duration > 58:
             titleAndComments.set_duration(58)
         bg = getBg()
-        finalVideo = CompositeVideoClip(clips=[bg.set_position(("center", "center")), titleAndComments.set_position(("center", "center"))], size=(1070, 1920)).set_duration(58)
+        finalVideo = CompositeVideoClip(clips=[bg.set_position(("center", "center")), titleAndComments.set_position(("center", 500))], size=(1080, 1920)).set_duration(59)
         
         outputFile = f"C:/Users/djali/OneDrive/Desktop/python/reddit-bot/video/post-{postObject['id']}.mp4"
         outputTitle = f"C:/Users/djali/OneDrive/Desktop/python/reddit-bot/titles/post-{postObject['id']}.txt"
